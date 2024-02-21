@@ -1,10 +1,10 @@
 # 백준 1978번 소수찾기
-n = int(input())
-numbers = map(int, input().split())
+n = int(input()) #주어진 n개의 개수를 입력한다.
+numbers = map(int, input().split()) #소수인지 확인하는 숫자들의 입력
 
-prime = 0
+prime = 0 # 소수의 개수를 0으로 초기화
 for num in numbers:
-    error = 0
+    error = 0 # 에러의 개수를 0으로 초기화
     if num > 1 : #숫자가 1이상 일때
         for i in range(2, num): #소수는 1과 자기자신을 제외한 수 외로 나누어지지 않는 수이기 때문에 2부터 자기자신-1로 나눈다.
             if num % i == 0: # 2~n-1로 나누었을때 나머지가 0이면
@@ -12,4 +12,4 @@ for num in numbers:
         if error == 0: # 만약에 에러가 0이라면(나누었을때 나머지가 0이 아님=소수)
             prime += 1 # 소수의 개수에 1을 추가, 소수의 개수를 구할 수 있다.
 
-print(prime) #위의 코드들로 인해 소수의 개수를 출력할 수 있다. 
+print(prime) #위의 코드들로 인해 소수의 개수를 출력할 수 있다.
